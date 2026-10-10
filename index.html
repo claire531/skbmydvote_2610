@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>뮤지컬연극동호회 11월·12월 공연 후보</title>
+<style>
+  :root{
+    --wine:#3a1220;
+    --wine-deep:#26090f;
+    --gold:#c9a24b;
+    --gold-soft:#e6d3a3;
+    --cream:#f6efe2;
+    --paper:#fffaf1;
+    --ink:#2a1c14;
+    --line:#e2d3b6;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--cream);
+    font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    color:var(--ink);
+    -webkit-tap-highlight-color:transparent;
+  }
+  header{
+    background:linear-gradient(160deg,var(--wine) 0%,var(--wine-deep) 100%);
+    color:var(--cream);
+    padding:28px 20px 20px;
+    text-align:center;
+    position:sticky;
+    top:0;
+    z-index:10;
+  }
+  header .eyebrow{
+    font-size:12px;
+    letter-spacing:3px;
+    color:var(--gold-soft);
+    text-transform:uppercase;
+    margin-bottom:6px;
+  }
+  header h1{
+    margin:0 0 4px;
+    font-size:22px;
+    font-weight:700;
+    letter-spacing:-0.3px;
+  }
+  header p{
+    margin:0;
+    font-size:13px;
+    color:#d8c6b0;
+  }
+  .tabs{
+    display:flex;
+    max-width:520px;
+    margin:18px auto 0;
+    background:rgba(0,0,0,0.25);
+    border-radius:999px;
+    padding:4px;
+    gap:4px;
+  }
+  .tab-btn{
+    flex:1;
+    border:none;
+    background:transparent;
+    color:#d8c6b0;
+    font-size:15px;
+    font-weight:600;
+    padding:11px 8px;
+    border-radius:999px;
+    cursor:pointer;
+    transition:all .25s ease;
+    font-family:inherit;
+  }
+  .tab-btn.active{
+    background:var(--gold);
+    color:var(--wine-deep);
+  }
+  main{
+    max-width:520px;
+    margin:0 auto;
+    padding:20px 16px 60px;
+  }
+  .month-panel{display:none;}
+  .month-panel.active{display:block;}
+  .month-desc{
+    font-size:13px;
+    color:#7a6650;
+    text-align:center;
+    margin:2px 0 20px;
+  }
+  .card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:14px;
+    overflow:hidden;
+    margin-bottom:20px;
+    box-shadow:0 2px 10px rgba(58,18,32,0.06);
+  }
+  .poster{
+    display:block;
+    text-decoration:none;
+    position:relative;
+    background:linear-gradient(150deg,var(--wine) 0%,var(--wine-deep) 100%);
+  }
+  .poster img{
+    width:100%;
+    height:420px;
+    object-fit:contain;
+    object-position:center center;
+    display:block;
+  }
+  .poster .see-poster{
+    position:absolute;
+    right:10px;
+    bottom:10px;
+    display:inline-flex;
+    align-items:center;
+    gap:5px;
+    font-size:11px;
+    color:var(--wine-deep);
+    background:var(--gold-soft);
+    padding:5px 11px;
+    border-radius:999px;
+    font-weight:600;
+    box-shadow:0 2px 6px rgba(0,0,0,0.25);
+  }
+  .card-body{
+    padding:16px 18px 18px;
+  }
+  .title-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    gap:8px;
+    margin-bottom:2px;
+  }
+  .title-row h2{
+    font-size:17px;
+    margin:0;
+    font-weight:700;
+  }
+  .badge{
+    font-size:11px;
+    color:var(--wine);
+    background:var(--gold-soft);
+    padding:3px 8px;
+    border-radius:6px;
+    white-space:nowrap;
+  }
+  .meta{
+    font-size:13px;
+    color:#6b5a48;
+    margin:6px 0 10px;
+    line-height:1.6;
+  }
+  .meta b{color:var(--ink);}
+  .feature{
+    font-size:13.5px;
+    color:var(--ink);
+    background:#f1e7d3;
+    border-left:3px solid var(--gold);
+    padding:9px 12px;
+    border-radius:6px;
+    margin-bottom:14px;
+    line-height:1.5;
+  }
+  .link-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    width:100%;
+    background:var(--wine);
+    color:var(--cream);
+    text-decoration:none;
+    font-size:14px;
+    font-weight:600;
+    padding:12px;
+    border-radius:9px;
+    transition:background .2s ease;
+  }
+  .link-btn:active{background:var(--wine-deep);}
+  .note{
+    font-size:12px;
+    color:#8a7a63;
+    margin:8px 2px 0;
+    line-height:1.5;
+    font-style:italic;
+  }
+  .note b{
+    font-style:normal;
+    color:#6b5a48;
+    font-weight:600;
+  }
+  footer{
+    text-align:center;
+    font-size:11.5px;
+    color:#a3947e;
+    padding:10px 20px 30px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">뮤지컬연극동호회</div>
+  <h1>11월·12월 관람 공연 후보</h1>
+  <p>투표 전, 아래 내용을 먼저 살펴봐 주세요 🎭<br>공연 시놉시스는 각 공연 예매처에서 확인하실 수 있어요!</p>
+  <div class="tabs">
+    <button class="tab-btn active" data-target="nov">11월 · 소극장</button>
+    <button class="tab-btn" data-target="dec">12월 · 대극장</button>
+  </div>
+</header>
+
+<main>
+
+  <!-- 11월 -->
+  <section id="nov" class="month-panel active">
+    <p class="month-desc">소극장 · 4개 후보</p>
+
+    <div class="card">
+      <a class="poster" href="https://nol.yanolja.com/ticket/products/26012259" target="_blank" rel="noopener">
+        <img src="poster_letmefly.jpg" alt="렛미플라이 포스터">
+        <span class="see-poster">🖼 예매처에서 공연 정보 보기</span>
+      </a>
+      <div class="card-body">
+        <div class="title-row"><h2>렛미플라이</h2><span class="badge">10/6~1/3</span></div>
+        <div class="meta">📍 <b>두산아트센터</b> (종로5가역)</div>
+        <div class="feature">시간여행을 하는 남원의 이야기. 재미와 감동이 모두 있어요!</div>
+        <a class="link-btn" href="https://youtu.be/hjI-gQmMDPo?si=kEoqII-T8-tOtAKB" target="_blank" rel="noopener">▶ 참고 영상 보기</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <a class="poster" href="https://nol.yanolja.com/ticket/products/26011828" target="_blank" rel="noopener">
+        <img src="poster_seom.jpg" alt="섬: 1933~2019 포스터">
+        <span class="see-poster">🖼 예매처에서 공연 정보 보기</span>
+      </a>
+      <div class="card-body">
+        <div class="title-row"><h2>섬: 1933~2019</h2><span class="badge">9/22~11/22</span></div>
+        <div class="meta">📍 <b>정동극장</b> (시청역)</div>
+        <div class="feature">세 개의 시대에서의 차별을 이야기하는 의미 있는 음악극</div>
+        <a class="link-btn" href="https://youtu.be/S0mfFGE3l18?si=_PpQOEAaUkzu55xF" target="_blank" rel="noopener">▶ 참고 영상 보기</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <a class="poster" href="https://nol.yanolja.com/ticket/products/P0004771" target="_blank" rel="noopener">
+        <img src="poster_forgetting.jpg" alt="네이처 오브 포겟팅 포스터">
+        <span class="see-poster">🖼 예매처에서 공연 정보 보기</span>
+      </a>
+      <div class="card-body">
+        <div class="title-row"><h2>네이처 오브 포겟팅</h2><span class="badge">9/18~11/29</span></div>
+        <div class="meta">📍 <b>세종문화회관</b> (광화문역)</div>
+        <div class="feature">대사보다는 몸짓과 움직임으로 여운이 느껴지는 피지컬 연극.</div>
+        <a class="link-btn" href="https://youtu.be/-PuboMHXFaE?si=TsY7lCzR9IDh74PY" target="_blank" rel="noopener">▶ 참고 영상 보기</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <a class="poster" href="https://nol.yanolja.com/ticket/products/26012145" target="_blank" rel="noopener">
+        <img src="poster_midnight.jpg" alt="미드나잇: 앤틀러스 포스터">
+        <span class="see-poster">🖼 예매처에서 공연 정보 보기</span>
+      </a>
+      <div class="card-body">
+        <div class="title-row"><h2>미드나잇: 앤틀러스</h2><span class="badge">10/4~11/15</span></div>
+        <div class="meta">📍 <b>유니플렉스</b> (혜화역)</div>
+        <div class="feature">구 소련 독재 시대를 배경으로 인간의 욕망을 다룬 뮤지컬</div>
+        <a class="link-btn" href="https://youtu.be/FWosE-GjSGM?si=JQzp9umL5v-CcESo" target="_blank" rel="noopener">▶ 참고 영상 보기</a>
+        <p class="note">⚠️ <b>비고</b> 11/15 종연 일정 고려하여 관람 필요</p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- 12월 -->
+  <section id="dec" class="month-panel">
+    <p class="month-desc">대극장 · 4개 후보</p>
+
+    <div class="card">
+      <a class="poster" href="https://nol.yanolja.com/ticket/products/26013098" target="_blank" rel="noopener">
+        <img src="poster_twocities.jpg" alt="두 도시 이야기 포스터">
+        <span class="see-poster">🖼 예매처에서 공연 정보 보기</span>
+      </a>
+      <div class="card-body">
+        <div class="title-row"><h2>두 도시 이야기</h2><span class="badge">11/11~2/8</span></div>
+        <div class="meta">📍 <b>광림아트센터 BBCH홀</b> (압구정역)</div>
+        <div class="feature">동명의 찰스 디킨스 소설을 극화한 뮤지컬로 12년만에 돌아왔어요!</div>
+        <a class="link-btn" href="https://youtu.be/QkYQHdZv5RU?si=HqvmRVEoRr32q0i2" target="_blank" rel="noopener">▶ 참고 영상 보기</a>
+        <p class="note">⚠️ <b>비고</b> 12년 전 홍보 영상</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <a class="poster" href="https://nol.yanolja.com/ticket/products/26013995" target="_blank" rel="noopener">
+        <img src="poster_phantom.jpg" alt="오페라의 유령 포스터">
+        <span class="see-poster">🖼 예매처에서 공연 정보 보기</span>
+      </a>
+      <div class="card-body">
+        <div class="title-row"><h2>오페라의 유령</h2><span class="badge">12/22~2/28</span></div>
+        <div class="meta">📍 <b>블루스퀘어</b> (한강진역)</div>
+        <div class="feature">넘버로 이미 잘 알려져 있는 대작. 스테디셀러에는 이유가 있겠죠?</div>
+        <a class="link-btn" href="https://youtu.be/CaAY8XZwH7I?si=Lt2AteeL7X1b6N5D" target="_blank" rel="noopener">▶ 참고 영상 보기</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <a class="poster" href="https://nol.yanolja.com/ticket/products/L0000150" target="_blank" rel="noopener">
+        <img src="poster_chicago.jpg" alt="시카고 포스터">
+        <span class="see-poster">🖼 예매처에서 공연 정보 보기</span>
+      </a>
+      <div class="card-body">
+        <div class="title-row"><h2>시카고</h2><span class="badge">12/5~3/14</span></div>
+        <div class="meta">📍 <b>LG아트센터</b> (마곡나루역)</div>
+        <div class="feature">아이비의 브로드웨이 시카고 진출로 더 유명해진 쇼뮤지컬</div>
+        <a class="link-btn" href="https://youtu.be/Lcntp7NFYMg?si=DwSGeiUf9mXKHxGv" target="_blank" rel="noopener">▶ 참고 영상 보기</a>
+        <p class="note">⚠️ <b>비고</b> 12월 아이비 회차는 잔여석이 많지 않을 수 있음</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <a class="poster" href="https://nol.yanolja.com/ticket/products/26007416" target="_blank" rel="noopener">
+        <img src="poster_frozen.jpg" alt="겨울왕국 포스터">
+        <span class="see-poster">🖼 예매처에서 공연 정보 보기</span>
+      </a>
+      <div class="card-body">
+        <div class="title-row"><h2>겨울왕국</h2><span class="badge">8/13~3/1</span></div>
+        <div class="meta">📍 <b>샤롯데씨어터</b> (잠실역)</div>
+        <div class="feature">아이들 타깃일 것 같지만, 보다 보면 엘사의 마법에 어른들도 스며 들어요!</div>
+        <a class="link-btn" href="https://youtu.be/YSDLiNmQ3wo?si=vX_teIsJZ0s-O2Qj" target="_blank" rel="noopener">▶ 참고 영상 보기</a>
+      </div>
+    </div>
+
+  </section>
+
+</main>
+
+<footer>10월 모임날 꼭 참여하셔서 투표 부탁드립니다 🙏</footer>
+
+<script>
+  const tabs = document.querySelectorAll('.tab-btn');
+  const panels = document.querySelectorAll('.month-panel');
+  tabs.forEach(tab=>{
+    tab.addEventListener('click', ()=>{
+      tabs.forEach(t=>t.classList.remove('active'));
+      panels.forEach(p=>p.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById(tab.dataset.target).classList.add('active');
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
+  });
+</script>
+
+</body>
+</html>
